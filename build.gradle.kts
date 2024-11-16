@@ -1,11 +1,15 @@
+import DotenvUtils.dotenv
+import DotenvUtils.injectInto
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.qa)
-    alias(libs.plugins.kotlin.dokka)
-    alias(libs.plugins.git.semantic.versioning)
+    with(libs.plugins) {
+        alias(kotlin.jvm)
+        alias(kotlin.qa)
+        alias(kotlin.dokka)
+        alias(gradle.docker.compose)
+    }
 }
 
 allprojects {
@@ -13,6 +17,13 @@ allprojects {
 
     repositories {
         mavenCentral()
+        maven {
+            url = uri("https://maven.pkg.github.com/position-pal/shared-kernel")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
     }
 }
 
@@ -22,6 +33,7 @@ subprojects {
         apply(plugin = kotlin.jvm.get().pluginId)
         apply(plugin = kotlin.qa.get().pluginId)
         apply(plugin = kotlin.dokka.get().pluginId)
+        apply(plugin = gradle.docker.compose.get().pluginId)
     }
 
     with(rootProject.libs) {
@@ -45,4 +57,6 @@ subprojects {
         }
         useJUnitPlatform()
     }
+
+    rootProject.dotenv?.let { injectInto(JavaExec::class, Test::class) environmentsFrom it }
 }
