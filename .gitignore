@@ -54,5 +54,8 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+### Environment ###
+.env
+
 ### Utilities ###
 .DS_Store

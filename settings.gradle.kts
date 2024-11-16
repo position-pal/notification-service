@@ -3,10 +3,17 @@ plugins {
     id("com.gradle.develocity") version "3.18.1"
 }
 
-rootProject.name = "kotlin-template"
+rootProject.name = "notification-service"
 
 include(
-    "core",
+    "commons",
+    "domain",
+    "application",
+    "presentation",
+    "mom",
+    "fcm",
+    "grpc",
+    "storage",
 )
 
 develocity {
