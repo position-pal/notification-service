@@ -1,20 +1,44 @@
 [versions]
+exposed = "0.56.0"
+grpc = "1.68.1"
+grpc-kotlin = "1.4.1"
+kernel = "0.7.0"
 kotlin = "2.0.21"
 kotest = "5.9.1"
+ktor = "3.0.1"
 mockito = "5.14.2"
+proto = "4.28.3"
+protobuf = "0.9.4"
 
 [libraries]
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed"}
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
+grpc-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc-kotlin" }
+grpc-testing = { module = "io.grpc:grpc-testing", version.ref = "grpc" }
+grpc-generator-java = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc" }
+grpc-generator-kotlin = { module = "io.grpc:protoc-gen-grpc-kotlin", version = "1.4.1:jdk8@jar" }
+grpc-netty-shaded = { module = "io.grpc:grpc-netty-shaded", version.ref = "grpc" }
+kotlinx-coroutines-core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+positionpal-kernel-domain = { module = "io.github.positionpal:kernel-domain", version.ref = "kernel" }
+positionpal-kernel-presentation = { module = "io.github.positionpal:kernel-presentation", version.ref = "kernel" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+postgresql = "org.postgresql:postgresql:42.7.1"
+protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "proto" }
+protobuf-protoc = { module = "com.google.protobuf:protoc", version.ref = "proto" }
+rabbitmq-amqp-client = "com.rabbitmq:amqp-client:5.22.0"
 
 [bundles]
 kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm", "mockito-core" ]
 
 [plugins]
+gradle-docker-compose = "com.avast.gradle.docker-compose:0.17.10"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-qa = "org.danilopianini.gradle-kotlin-qa:0.70.1"
 kotlin-dokka = { id = "org.jetbrains.dokka", version = "1.9.20" }
-git-semantic-versioning = "org.danilopianini.git-sensitive-semantic-versioning:3.1.7"
+protobuf = {id = "com.google.protobuf", version.ref = "protobuf"}

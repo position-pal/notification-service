@@ -1,0 +1,27 @@
+services:
+  rabbitmq-broker:
+    image: rabbitmq:3-management
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      - "5672:5672"   # the port RabbitMQ will listen on
+      - "8080:15672"  # the port the dashboard web service will be available from
+
+  postgres-db:
+    build:
+      context: .
+      dockerfile: Dockerfile-db
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
