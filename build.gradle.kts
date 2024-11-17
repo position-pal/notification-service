@@ -58,5 +58,19 @@ subprojects {
         useJUnitPlatform()
     }
 
+    val generatedFilesFolder = "build${File.separator}generated"
+
+    tasks.withType<SourceTask>()
+        .matching { it is VerificationTask }
+        .configureEach {
+            exclude { generatedFilesFolder in it.file.absolutePath }
+        }
+
+    ktlint {
+        filter {
+            exclude { generatedFilesFolder in it.file.absolutePath }
+        }
+    }
+
     rootProject.dotenv?.let { injectInto(JavaExec::class, Test::class) environmentsFrom it }
 }

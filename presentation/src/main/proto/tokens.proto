@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "io.github.positionpal.notification.presentation";
+option java_outer_classname = "Proto";
+
+service UsersTokensService {
+    rpc Register(UserToken) returns (EmptyResponse);
+    rpc Invalidate(UserToken) returns (EmptyResponse);
+}
+
+message UserToken {
+    string user = 1;
+    string token = 2;
+}
+
+message Status {
+    StatusCode code = 1;
+    optional string message = 2;
+}
+
+enum StatusCode {
+    OK = 0;
+    CONFLICT = 1;
+    NOT_FOUND = 2;
+    GENERIC_ERROR = 3;
+}
+
+message EmptyResponse {
+    Status status = 1;
+}
