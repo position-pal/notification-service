@@ -4,6 +4,7 @@ dependencies {
         implementation(postgresql)
         implementation(exposed.core)
         implementation(exposed.jdbc)
+        implementation(hikaricp)
     }
 }
 

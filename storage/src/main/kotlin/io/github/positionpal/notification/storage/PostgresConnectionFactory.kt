@@ -1,5 +1,7 @@
 package io.github.positionpal.notification.storage
 
+import com.zaxxer.hikari.HikariConfig
+import com.zaxxer.hikari.HikariDataSource
 import org.jetbrains.exposed.sql.Database
 
 /**
@@ -19,10 +21,13 @@ class PostgresConnectionFactory(
 ) : ConnectionFactory<Database> {
 
     override fun connect(): Result<Database> = runCatching {
-        Database.connect(
-            url = "jdbc:postgresql://$host:$port/$databaseName",
-            user = username,
-            password = password,
-        )
+        val config = HikariConfig().apply {
+            jdbcUrl = "jdbc:postgresql://$host:$port/$databaseName"
+            driverClassName = "org.postgresql.Driver"
+            username = this@PostgresConnectionFactory.username
+            password = this@PostgresConnectionFactory.password
+            validate()
+        }
+        Database.connect(HikariDataSource(config))
     }
 }
