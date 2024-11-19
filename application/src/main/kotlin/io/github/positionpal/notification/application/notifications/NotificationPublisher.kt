@@ -7,7 +7,7 @@ import io.github.positionpal.entities.UserId
 /** A notification publisher service which is responsible for publishing notifications to the clients. */
 interface NotificationPublisher {
 
-    /** @return a [PublishingTargetStrategy] to specify the target to send the notification message. */
+    /** @return a [PublishingTargetStrategy] to specify the target of the notification message. */
     suspend infix fun send(notificationMessage: NotificationMessage): PublishingTargetStrategy
 
     /** Sends the given [message] to the specified [userIds]. */
