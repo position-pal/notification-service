@@ -12,7 +12,7 @@ import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 
-/** A [GroupsRepository] adapter for a PostgreSQL database. * */
+/** A [GroupsRepository] adapter for a PostgresSQL database. * */
 class PostgresGroupsRepository(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) : GroupsRepository {
     override suspend fun addMember(groupId: GroupId, userId: UserId): Result<Unit> = runCatching {
         newSuspendedTransaction(dispatcher) {

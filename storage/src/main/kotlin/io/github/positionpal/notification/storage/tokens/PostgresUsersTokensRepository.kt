@@ -14,7 +14,7 @@ import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 
-/** A [UsersTokensRepository] adapter for a PostgreSQL database. */
+/** A [UsersTokensRepository] adapter for a PostgresSQL database. */
 class PostgresUsersTokensRepository(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) : UsersTokensRepository {
