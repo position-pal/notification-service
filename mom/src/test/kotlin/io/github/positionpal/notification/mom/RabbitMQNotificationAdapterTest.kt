@@ -9,7 +9,7 @@ import io.github.positionpal.entities.NotificationMessage
 import io.github.positionpal.entities.UserId
 import io.github.positionpal.notification.application.notifications.NotificationPublisher
 import io.github.positionpal.notification.application.notifications.PublishingTargetStrategy
-import io.github.positionpal.notification.mom.RabbitMQNotificationAdapter.Companion.PUSH_NOTIFICATIONS_EXCHANGE
+import io.github.positionpal.notification.mom.RabbitMQNotificationsConsumer.Companion.PUSH_NOTIFICATIONS_EXCHANGE
 import io.kotest.assertions.nondeterministic.eventually
 import io.kotest.assertions.nondeterministic.eventuallyConfig
 import io.kotest.common.runBlocking
@@ -17,8 +17,6 @@ import io.kotest.core.spec.style.WordSpec
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
@@ -27,7 +25,7 @@ class RabbitMQNotificationAdapterTest : WordSpec({
     "RabbitMQNotificationAdapter" should {
         "receive notification events and forward appropriately to the notification publisher" {
             runBlocking {
-                RabbitMQNotificationAdapter(fakePublisher, localRabbitMQConfig, CoroutineScope(Dispatchers.IO)).use {
+                RabbitMQNotificationsConsumer(fakePublisher, localRabbitMQConfig).use {
                     it.setup()
                     publish(
                         PUSH_NOTIFICATIONS_EXCHANGE,
@@ -50,18 +48,18 @@ class RabbitMQNotificationAdapterTest : WordSpec({
 }) {
 
     private companion object {
-        val serializer = AvroSerializer()
-        val eventuallyConfig = eventuallyConfig {
+        private val serializer = AvroSerializer()
+        private val eventuallyConfig = eventuallyConfig {
             duration = 5.seconds
             interval = 200.milliseconds
         }
-        val testGroup = GroupId.create("astro")
-        val testUser = UserId.create("luke")
-        val groupWiseMessage = NotificationMessage.create("Group notification", "A nice group-wise message")
-        val groupWiseNotification = GroupWisePushNotification.of(testGroup, testUser, groupWiseMessage)
-        val coMembersMessage = NotificationMessage.create("Co-members notification", "A nice co-members message")
-        val coMembersNotification = CoMembersPushNotification.of(testUser, testUser, coMembersMessage)
-        val fakePublisher = mockk<NotificationPublisher> {
+        private val testGroup = GroupId.create("astro")
+        private val testUser = UserId.create("luke")
+        private val groupWiseMessage = NotificationMessage.create("Group msg", "A nice group-wise message")
+        private val groupWiseNotification = GroupWisePushNotification.of(testGroup, testUser, groupWiseMessage)
+        private val coMembersMessage = NotificationMessage.create("Co-members msg", "A nice co-members message")
+        private val coMembersNotification = CoMembersPushNotification.of(testUser, testUser, coMembersMessage)
+        private val fakePublisher = mockk<NotificationPublisher> {
             coEvery { send(groupWiseMessage) } returns mockk<PublishingTargetStrategy>(relaxed = true)
             coEvery { send(coMembersMessage) } returns mockk<PublishingTargetStrategy> {
                 coEvery { toAllMembersSharingGroupWith(testUser) } returns Unit

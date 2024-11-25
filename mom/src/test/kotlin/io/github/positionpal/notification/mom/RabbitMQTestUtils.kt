@@ -2,7 +2,7 @@ package io.github.positionpal.notification.mom
 
 import com.rabbitmq.client.AMQP
 
-internal val localRabbitMQConfig = RabbitMQConfiguration(
+internal val localRabbitMQConfig = RabbitMQ.Configuration(
     host = "localhost",
     virtualHost = "/",
     port = 5672,
@@ -11,7 +11,7 @@ internal val localRabbitMQConfig = RabbitMQConfiguration(
 )
 
 internal fun publish(exchange: String, messageType: String, msg: ByteArray) =
-    RabbitMQConnectionFactory(localRabbitMQConfig).connect().onSuccess {
+    RabbitMQ(localRabbitMQConfig).connect().onSuccess {
         with(RabbitMQClient(it)) {
             createChannel().use { ch ->
                 ch.basicPublish(
