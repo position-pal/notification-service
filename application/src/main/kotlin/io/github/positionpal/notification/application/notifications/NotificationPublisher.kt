@@ -4,17 +4,26 @@ import io.github.positionpal.entities.GroupId
 import io.github.positionpal.entities.NotificationMessage
 import io.github.positionpal.entities.UserId
 
-/** A notification publisher service which is responsible for publishing notifications to the clients. */
+/**
+ * A notification publisher service which is responsible for publishing notifications to the final users.
+ */
 interface NotificationPublisher {
 
-    /** @return a [PublishingTargetStrategy] to specify the target of the notification message. */
+    /**
+     * DSL entry point to send the given [notificationMessage] to users.
+     * The client is expected to chain this with one of the [PublishingTargetStrategy]'s method
+     * to specify who will receive the notification.
+     * @return a [PublishingTargetStrategy] to specify the target of the notification message.
+     */
     suspend infix fun send(notificationMessage: NotificationMessage): PublishingTargetStrategy
 
     /** Sends the given [message] to the specified [userIds]. */
     suspend fun send(message: NotificationMessage, userIds: Set<UserId>)
 }
 
-/** A strategy to specify the target to send the notification message. */
+/**
+ * A strategy to specify the target to send the notification message.
+ */
 interface PublishingTargetStrategy {
 
     /** Sends the notification message to all members of the specified [groupId]. */
