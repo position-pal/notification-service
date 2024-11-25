@@ -4,7 +4,7 @@ import io.github.positionpal.entities.UserId
 import io.github.positionpal.notification.application.tokens.Conflict
 import io.github.positionpal.notification.application.tokens.NotFound
 import io.github.positionpal.notification.domain.UserToken
-import io.github.positionpal.notification.storage.PostgresConnectionFactory
+import io.github.positionpal.notification.storage.Postgres
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.common.runBlocking
 import io.kotest.core.spec.style.WordSpec
@@ -13,7 +13,7 @@ import io.kotest.matchers.shouldBe
 class PostgresUsersTokensRepositoryTest : WordSpec({
 
     beforeSpec {
-        connectionFactory.connect()
+        Postgres(localPostgresConfiguration).connect().onFailure { error("Failure in DB connection!") }
     }
 
     "PostgresUsersTokensRepository" When {
@@ -70,13 +70,6 @@ class PostgresUsersTokensRepositoryTest : WordSpec({
     }
 }) {
     private companion object {
-        private val connectionFactory = PostgresConnectionFactory(
-            databaseName = "notifications_service",
-            username = "postgres",
-            password = "postgres",
-            host = "localhost",
-            port = 5432,
-        )
         private val repository = PostgresUsersTokensRepository()
         private val user = UserId.create("test-user")
         private const val token = "dXsG47jkHv1edfdffkj_ek:APA91bHq7klZj2R7DfO_MoL4t1O9aHDeEZK8Acd2A3h9E-" +
