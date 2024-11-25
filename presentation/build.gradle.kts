@@ -6,7 +6,6 @@ dependencies {
     api(project(":application"))
     with(libs) {
         api(libs.positionpal.kernel.presentation)
-        api(libs.ktor.serialization.kotlinx.json)
         implementation(grpc.stub)
         implementation(grpc.protobuf)
         implementation(protobuf.kotlin)
