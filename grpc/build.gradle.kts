@@ -6,6 +6,6 @@ dependencies {
         api(protobuf.kotlin)
         implementation(grpc.netty.shaded)
         testImplementation(libs.grpc.testing)
-        testImplementation("io.grpc:grpc-inprocess:1.68.1")
+        testImplementation(libs.grpc.inprocess)
     }
 }
