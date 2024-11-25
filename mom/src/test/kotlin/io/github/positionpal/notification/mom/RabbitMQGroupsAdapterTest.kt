@@ -8,7 +8,7 @@ import io.github.positionpal.User
 import io.github.positionpal.entities.GroupId
 import io.github.positionpal.entities.UserId
 import io.github.positionpal.notification.application.groups.GroupsRepository
-import io.github.positionpal.notification.mom.RabbitMQGroupsAdapter.Companion.GROUP_UPDATES_EXCHANGE
+import io.github.positionpal.notification.mom.RabbitMQGroupsEventsConsumer.Companion.GROUP_UPDATES_EXCHANGE
 import io.kotest.assertions.nondeterministic.eventually
 import io.kotest.assertions.nondeterministic.eventuallyConfig
 import io.kotest.common.runBlocking
@@ -16,8 +16,6 @@ import io.kotest.core.spec.style.WordSpec
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 
@@ -26,7 +24,7 @@ class RabbitMQGroupsAdapterTest : WordSpec({
     "RabbitMQGroupsAdapter" should {
         "receive groups events and forward appropriately to the groups repository" {
             runBlocking {
-                RabbitMQGroupsAdapter(fakeGroupsRepository, localRabbitMQConfig, CoroutineScope(Dispatchers.IO)).use {
+                RabbitMQGroupsEventsConsumer(fakeGroupsRepository, localRabbitMQConfig).use {
                     it.setup()
                     publish(
                         GROUP_UPDATES_EXCHANGE,
@@ -53,16 +51,16 @@ class RabbitMQGroupsAdapterTest : WordSpec({
 }) {
 
     private companion object {
-        val serializer = AvroSerializer()
-        val eventuallyConfig = eventuallyConfig {
+        private val serializer = AvroSerializer()
+        private val eventuallyConfig = eventuallyConfig {
             duration = 5.seconds
             interval = 200.milliseconds
         }
-        val testGroup = GroupId.create("astro")
-        val testUser = User.create("luke", "Luke", "Skywalker", "lukesky@gmail.com", "member")
-        val addedEvent = AddedMemberToGroup.create(testGroup.value(), testUser)
-        val removedEvent = RemovedMemberToGroup.create(testGroup.value(), testUser)
-        val fakeGroupsRepository = mockk<GroupsRepository> {
+        private val testGroup = GroupId.create("astro")
+        private val testUser = User.create("luke", "Luke", "Skywalker", "lukesky@gmail.com", "member")
+        private val addedEvent = AddedMemberToGroup.create(testGroup.value(), testUser)
+        private val removedEvent = RemovedMemberToGroup.create(testGroup.value(), testUser)
+        private val fakeGroupsRepository = mockk<GroupsRepository> {
             coEvery { addMember(testGroup, UserId.create(testUser.id())) } returns Result.success(Unit)
             coEvery { removeMember(testGroup, UserId.create(testUser.id())) } returns Result.success(Unit)
         }

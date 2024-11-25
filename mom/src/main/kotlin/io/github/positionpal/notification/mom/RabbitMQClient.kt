@@ -7,6 +7,7 @@ import com.rabbitmq.client.Connection
 import com.rabbitmq.client.DefaultConsumer
 import com.rabbitmq.client.Envelope
 
+/** The name of a queue. */
 typealias QueueName = String
 
 /**
