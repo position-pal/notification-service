@@ -12,6 +12,9 @@ jobs:
         jvm-version: [ 11, 17, 21 ]
       fail-fast: false
     runs-on: ${{ matrix.os }}
+    env:
+      USERNAME: ${{ secrets.USERNAME }}
+      TOKEN: ${{ secrets.TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
