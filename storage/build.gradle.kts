@@ -1,3 +1,7 @@
+import Utils.isInCI
+import Utils.isOnLinux
+import Utils.normally
+
 dependencies {
     api(project(":application"))
     with(libs) {
@@ -8,9 +12,13 @@ dependencies {
     }
 }
 
-dockerCompose {
-    val postgresService = "postgres-db"
-    startedServices = listOf(postgresService)
+normally {
+    dockerCompose {
+        val postgresService = "postgres-db"
+        startedServices = listOf(postgresService)
+        isRequiredBy(tasks.test)
+    }
+} exceptOn { isInCI && !isOnLinux } where {
+    // Github Actions Windows and MacOS runners do not support Docker
+    tasks.test { enabled = false }
 }
-
-dockerCompose.isRequiredBy(tasks.test)
