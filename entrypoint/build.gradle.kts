@@ -10,5 +10,5 @@ dependencies {
 }
 
 application {
-    mainClass = "io.github.positionpal.notification.entrypoint.Launcher"
+    mainClass = "$group.notification.entrypoint.Launcher"
 }

@@ -72,5 +72,7 @@ subprojects {
         }
     }
 
-    rootProject.dotenv?.let { injectInto(JavaExec::class, Test::class) environmentsFrom it }
+    afterEvaluate {
+        rootProject.dotenv?.let { injectInto(JavaExec::class, Test::class) environmentsFrom it }
+    }
 }
