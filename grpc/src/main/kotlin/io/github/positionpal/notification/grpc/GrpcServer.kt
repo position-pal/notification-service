@@ -3,12 +3,17 @@ package io.github.positionpal.notification.grpc
 import io.grpc.BindableService
 import io.grpc.Server
 import io.grpc.ServerBuilder
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 /** A gRPC server instance, acting as entry point for managing gRPC services lifecycle. */
-class GrpcServer(private val configuration: Configuration, private val scope: CoroutineScope) : AutoCloseable {
+class GrpcServer(
+    private val configuration: Configuration,
+    dispatcher: CoroutineDispatcher = Dispatchers.IO,
+) : AutoCloseable {
 
     /**
      * Configuration for the gRPC server.
@@ -23,6 +28,7 @@ class GrpcServer(private val configuration: Configuration, private val scope: Co
     )
 
     private lateinit var server: Server
+    private val scope = CoroutineScope(dispatcher)
 
     /** Starts the gRPC server. */
     fun start() {
