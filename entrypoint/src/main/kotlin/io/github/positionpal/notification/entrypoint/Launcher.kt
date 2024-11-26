@@ -25,21 +25,21 @@ object Launcher {
      */
     @JvmStatic
     fun main(args: Array<String>): Unit = runBlocking {
-        val firebaseConfiguration = Firebase.Configuration("service-account.json")
+        val firebaseConfiguration = Firebase.Configuration(System.getenv("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"))
         val firebase = Firebase.create(firebaseConfiguration).getOrThrow()
         val rabbitMqConfiguration = RabbitMQ.Configuration(
-            host = "localhost",
-            virtualHost = "/",
-            port = 5672,
-            username = "guest",
-            password = "admin",
+            host = System.getenv("RABBITMQ_HOST"),
+            virtualHost = System.getenv("RABBITMQ_VIRTUAL_HOST"),
+            port = System.getenv("RABBITMQ_PORT").toInt(),
+            username = System.getenv("RABBITMQ_USERNAME"),
+            password = System.getenv("RABBITMQ_PASSWORD"),
         )
         val postgresConfiguration = Postgres.Configuration(
-            databaseName = "notifications_service",
-            username = "postgres",
-            password = "postgres",
-            host = "localhost",
-            port = 5432,
+            databaseName = System.getenv("POSTGRES_DB_NAME") ?: "notifications_service",
+            username = System.getenv("POSTGRES_USERNAME"),
+            password = System.getenv("POSTGRES_PASSWORD"),
+            host = System.getenv("POSTGRES_HOST"),
+            port = System.getenv("POSTGRES_PORT").toInt(),
         )
         Postgres(postgresConfiguration).connect().getOrThrow()
         val groupsRepository = PostgresGroupsRepository()
