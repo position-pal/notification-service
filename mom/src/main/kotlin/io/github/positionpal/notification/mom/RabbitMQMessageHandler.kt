@@ -1,7 +1,6 @@
 package io.github.positionpal.notification.mom
 
 import com.rabbitmq.client.Channel
-import io.github.positionpal.notification.commons.flatMap
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -15,15 +14,13 @@ abstract class RabbitMQMessageHandler(private val configuration: RabbitMQ.Config
     private lateinit var client: RabbitMQClient
 
     /** Set up the RabbitMQ connection and declare the exchange and queue. Here side effects occur. */
-    fun setup() {
+    fun setup(): Result<Unit> {
         require(!this::client.isInitialized) { "`setup` method can only be called once" }
-        RabbitMQ(configuration).connect().flatMap { conn ->
-            runCatching {
-                client = RabbitMQClient(conn).apply {
-                    onChannelCreated(createChannel())
-                }
-            }.onFailure { logger.error("Failed to setup RabbitMQ: {}", it.message) }
-        }
+        return RabbitMQ(configuration).connect().mapCatching { connection ->
+            client = RabbitMQClient(connection).apply {
+                onChannelCreated(createChannel())
+            }
+        }.onFailure { logger.error("Failed to setup RabbitMQ: {}", it.message) }
     }
 
     internal abstract fun RabbitMQClient.onChannelCreated(channel: Channel)
