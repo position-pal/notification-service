@@ -14,6 +14,7 @@ include(
     "fcm",
     "grpc",
     "storage",
+    "entrypoint",
 )
 
 develocity {
