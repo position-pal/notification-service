@@ -1,3 +1,17 @@
+## [1.0.1](https://github.com/position-pal/notification-service/compare/1.0.0...1.0.1) (2024-11-28)
+
+### Dependency updates
+
+* **core-deps:** update kotlin monorepo to v2.1.0 ([#20](https://github.com/position-pal/notification-service/issues/20)) ([64c7587](https://github.com/position-pal/notification-service/commit/64c758704579e614e89e5394abc8a16026297544))
+* **deps:** pin dependencies ([#11](https://github.com/position-pal/notification-service/issues/11)) ([cecfc64](https://github.com/position-pal/notification-service/commit/cecfc6454444dc026aaa213981781873ee19fafd))
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.4.14 ([#12](https://github.com/position-pal/notification-service/issues/12)) ([5cca602](https://github.com/position-pal/notification-service/commit/5cca60271b7593b77dae82fb4cb1e87ea7503dc6))
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.12 ([#14](https://github.com/position-pal/notification-service/issues/14)) ([e0bfdb0](https://github.com/position-pal/notification-service/commit/e0bfdb02ec18d10f678174d7ee072aa22bea8eb9))
+* **deps:** update dependency com.rabbitmq:amqp-client to v5.23.0 ([#15](https://github.com/position-pal/notification-service/issues/15)) ([7202489](https://github.com/position-pal/notification-service/commit/72024890583b7314ddc61e6697adfe7a4ea55029))
+* **deps:** update dependency com.zaxxer:hikaricp to v6 ([#17](https://github.com/position-pal/notification-service/issues/17)) ([a0cf749](https://github.com/position-pal/notification-service/commit/a0cf74924a510eb8bb85d7cf343659035b27d6f3))
+* **deps:** update dependency org.postgresql:postgresql to v42.7.4 ([#13](https://github.com/position-pal/notification-service/issues/13)) ([b19db87](https://github.com/position-pal/notification-service/commit/b19db8768d70ba07333722c386cff3c3c563d749))
+* **deps:** update postgres docker tag to v17.2 ([#16](https://github.com/position-pal/notification-service/issues/16)) ([8ee544b](https://github.com/position-pal/notification-service/commit/8ee544b8cab7d429d96763ea28df537dac41700f))
+* **deps:** update rabbitmq docker tag to v4 ([#18](https://github.com/position-pal/notification-service/issues/18)) ([4436d87](https://github.com/position-pal/notification-service/commit/4436d874d54cc41d6c17bca8696db31299bc3b49))
+
 ## [1.0.0](https://github.com/position-pal/notification-service/compare/0.1.1...1.0.0) (2024-11-26)
 
 ### ⚠ BREAKING CHANGES
