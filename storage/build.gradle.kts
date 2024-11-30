@@ -1,6 +1,7 @@
-import Utils.isInCI
-import Utils.isOnLinux
+import Utils.inCI
 import Utils.normally
+import Utils.onMac
+import Utils.onWindows
 
 dependencies {
     api(project(":application"))
@@ -18,7 +19,6 @@ normally {
         startedServices = listOf(postgresService)
         isRequiredBy(tasks.test)
     }
-} exceptOn { isInCI && !isOnLinux } where {
-    // Github Actions Windows and MacOS runners do not support Docker
+} except { inCI and (onMac or onWindows) } where {
     tasks.test { enabled = false }
-}
+} cause "GitHub Actions runner does not support Docker Compose"
