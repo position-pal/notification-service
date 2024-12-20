@@ -1,3 +1,41 @@
+## [1.0.2](https://github.com/position-pal/notification-service/compare/1.0.1...1.0.2) (2024-12-20)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlinx:kotlinx-coroutines-core to v1.10.0 ([#48](https://github.com/position-pal/notification-service/issues/48)) ([6693584](https://github.com/position-pal/notification-service/commit/6693584922df09cd225f5a11b5826d1794632e0b))
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.13 ([#45](https://github.com/position-pal/notification-service/issues/45)) ([584e866](https://github.com/position-pal/notification-service/commit/584e86693a1639be8673d234bc09308f5daafd95))
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.14 ([#47](https://github.com/position-pal/notification-service/issues/47)) ([122535b](https://github.com/position-pal/notification-service/commit/122535bda4b4115c6c1ad0aeb8447ac5a98bd2f2))
+* **deps:** update dependency com.google.firebase:firebase-admin to v9.4.2 ([#32](https://github.com/position-pal/notification-service/issues/32)) ([6b98f5b](https://github.com/position-pal/notification-service/commit/6b98f5bbe4bf4ffeeebfe8fb4a0fd3458d61864a))
+* **deps:** update dependency com.rabbitmq:amqp-client to v5.24.0 ([#38](https://github.com/position-pal/notification-service/issues/38)) ([9bfe7c9](https://github.com/position-pal/notification-service/commit/9bfe7c90db0d8af7019427360e9ce3fb8f2139dd))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.116 ([#34](https://github.com/position-pal/notification-service/issues/34)) ([6f96f8d](https://github.com/position-pal/notification-service/commit/6f96f8da4fb64a6e9cd568d9b947706c7b9c1ba5))
+* **deps:** update exposed to v0.57.0 ([#33](https://github.com/position-pal/notification-service/issues/33)) ([75e02eb](https://github.com/position-pal/notification-service/commit/75e02eba7cab54b725cd07316a7cc3954bd18d59))
+* **deps:** update grpc-java monorepo to v1.68.2 ([#22](https://github.com/position-pal/notification-service/issues/22)) ([e6c4b03](https://github.com/position-pal/notification-service/commit/e6c4b03d32bddaf9236493dc07b4aff71e70d1ab))
+* **deps:** update grpc-java monorepo to v1.69.0 ([#35](https://github.com/position-pal/notification-service/issues/35)) ([6d35294](https://github.com/position-pal/notification-service/commit/6d352941316c6f2457bbce6604f1c8bad77b751c))
+* **deps:** update node.js to 22.12 ([#28](https://github.com/position-pal/notification-service/issues/28)) ([9a80508](https://github.com/position-pal/notification-service/commit/9a80508efe87255671d644b28d62f19d274720cc))
+* **deps:** update plugin com.gradle.develocity to v3.19 ([#39](https://github.com/position-pal/notification-service/issues/39)) ([b9e2a4f](https://github.com/position-pal/notification-service/commit/b9e2a4ff0af4a3f47bec98c073af12b3583b74a5))
+* **deps:** update plugin gradle-docker-compose to v0.17.11 ([#19](https://github.com/position-pal/notification-service/issues/19)) ([37f652e](https://github.com/position-pal/notification-service/commit/37f652e54363fbe12f8c2c5ae6dec43c70939fe2))
+* **deps:** update plugin gradle-docker-compose to v0.17.12 ([#40](https://github.com/position-pal/notification-service/issues/40)) ([e227668](https://github.com/position-pal/notification-service/commit/e227668dc2137e79f818b10f520961b202451c63))
+* **deps:** update plugin kotlin-dokka to v2 ([#43](https://github.com/position-pal/notification-service/issues/43)) ([91d0cb8](https://github.com/position-pal/notification-service/commit/91d0cb87fa6ef5e4739b5c1619e2e48ba19b5e59))
+* **deps:** update plugin kotlin-qa to v0.70.2 ([#23](https://github.com/position-pal/notification-service/issues/23)) ([b6e5c09](https://github.com/position-pal/notification-service/commit/b6e5c098da6adefbf62212ca8634ea2310a8025b))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.17 ([#42](https://github.com/position-pal/notification-service/issues/42)) ([0c65969](https://github.com/position-pal/notification-service/commit/0c659697979e9899066679ff436f16486a2238c8))
+* **deps:** update postgres:17.2 docker digest to 53108e0 ([#24](https://github.com/position-pal/notification-service/issues/24)) ([afba478](https://github.com/position-pal/notification-service/commit/afba478ca056d55fd3cbcbf26842ba0cb4a22db3))
+* **deps:** update postgres:17.2 docker digest to fe4efc6 ([#26](https://github.com/position-pal/notification-service/issues/26)) ([d8a250f](https://github.com/position-pal/notification-service/commit/d8a250f2e2e4db6d2ba6cd4e0ab610a84a82fc5e))
+* **deps:** update proto to v4.29.0 ([#21](https://github.com/position-pal/notification-service/issues/21)) ([e9851bc](https://github.com/position-pal/notification-service/commit/e9851bce90921cf9908b94405a7f52c0ddc7d95b))
+* **deps:** update proto to v4.29.1 ([#29](https://github.com/position-pal/notification-service/issues/29)) ([12f25b6](https://github.com/position-pal/notification-service/commit/12f25b6a308beabbd23533ea53638cc9aa63422a))
+* **deps:** update proto to v4.29.2 ([#44](https://github.com/position-pal/notification-service/issues/44)) ([f308d02](https://github.com/position-pal/notification-service/commit/f308d02ca83576bd6c0aff6166a8e42a3a3980bd))
+* **deps:** update rabbitmq:4-management docker digest to 144d782 ([#37](https://github.com/position-pal/notification-service/issues/37)) ([5bb03c6](https://github.com/position-pal/notification-service/commit/5bb03c60211f391ee22815f4b761b8d9f14692b8))
+* **deps:** update rabbitmq:4-management docker digest to 4a2b95d ([#46](https://github.com/position-pal/notification-service/issues/46)) ([20acfdc](https://github.com/position-pal/notification-service/commit/20acfdc1909c48b71c99fa96b717e2ece6820914))
+* **deps:** update rabbitmq:4-management docker digest to 4dc1302 ([#25](https://github.com/position-pal/notification-service/issues/25)) ([25aa213](https://github.com/position-pal/notification-service/commit/25aa213cb18df36f1c8368137cd7918a0fd920bf))
+* **deps:** update rabbitmq:4-management docker digest to 57513d2 ([#36](https://github.com/position-pal/notification-service/issues/36)) ([7e64ec9](https://github.com/position-pal/notification-service/commit/7e64ec92645275c7495b71e471f68ddaf5b72319))
+* **deps:** update rabbitmq:4-management docker digest to 8340b65 ([#31](https://github.com/position-pal/notification-service/issues/31)) ([0cf5f37](https://github.com/position-pal/notification-service/commit/0cf5f37eae21d04fd0438e57322939fa0fd5eae5))
+* **deps:** update rabbitmq:4-management docker digest to b25420a ([#30](https://github.com/position-pal/notification-service/issues/30)) ([d626f3b](https://github.com/position-pal/notification-service/commit/d626f3b38c0847ad4b8048134839659d86b20b4a))
+* **deps:** update rabbitmq:4-management docker digest to c0f5ae4 ([#27](https://github.com/position-pal/notification-service/issues/27)) ([627e6cc](https://github.com/position-pal/notification-service/commit/627e6ccf6d40bc1ed3f5657b4e7156beb19acc34))
+
+### Build and continuous integration
+
+* add to branch behavior build api a method to specify the cause ([18dd148](https://github.com/position-pal/notification-service/commit/18dd148ac56690ffa18cffd452e6748115060856))
+* **deps:** update actions/setup-java digest to 7a6d8a8 ([#41](https://github.com/position-pal/notification-service/issues/41)) ([01ac568](https://github.com/position-pal/notification-service/commit/01ac5687a68adb1e629dbc1b96081721eae307bd))
+
 ## [1.0.1](https://github.com/position-pal/notification-service/compare/1.0.0...1.0.1) (2024-11-28)
 
 ### Dependency updates
