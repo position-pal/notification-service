@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/position-pal/notification-service/compare/1.0.2...1.0.3) (2024-12-21)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlinx:kotlinx-coroutines-core to v1.10.1 ([#49](https://github.com/position-pal/notification-service/issues/49)) ([0e808aa](https://github.com/position-pal/notification-service/commit/0e808aaa4309c86c7bc27daff8ba7c52000fdf82))
+
 ## [1.0.2](https://github.com/position-pal/notification-service/compare/1.0.1...1.0.2) (2024-12-20)
 
 ### Dependency updates
