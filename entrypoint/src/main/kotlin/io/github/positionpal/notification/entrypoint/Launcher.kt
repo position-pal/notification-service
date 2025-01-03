@@ -13,8 +13,6 @@ import io.github.positionpal.notification.storage.groups.PostgresGroupsRepositor
 import io.github.positionpal.notification.storage.tokens.PostgresUsersTokensRepository
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.nio.file.Paths
-import kotlin.io.path.pathString
 
 /**
  * The entry point of the service.
@@ -27,32 +25,29 @@ object Launcher {
      */
     @JvmStatic
     fun main(args: Array<String>): Unit = runBlocking {
-        val rootProjectDir = Paths.get("").toAbsolutePath().normalize().parent
         val firebaseConfiguration = Firebase.Configuration(
-            serviceAccountFilePath = rootProjectDir
-                .resolve(System.getenv("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"))
-                .pathString,
+            serviceAccountFilePath = env("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"),
         )
         val firebase = Firebase.create(firebaseConfiguration).getOrThrow()
         val rabbitMqConfiguration = RabbitMQ.Configuration(
-            host = System.getenv("RABBITMQ_HOST"),
-            virtualHost = System.getenv("RABBITMQ_VIRTUAL_HOST"),
-            port = System.getenv("RABBITMQ_PORT").toInt(),
-            username = System.getenv("RABBITMQ_USERNAME"),
-            password = System.getenv("RABBITMQ_PASSWORD"),
+            host = env("RABBITMQ_HOST"),
+            virtualHost = env("RABBITMQ_VIRTUAL_HOST"),
+            port = env("RABBITMQ_PORT").toInt(),
+            username = env("RABBITMQ_USERNAME"),
+            password = env("RABBITMQ_PASSWORD"),
         )
         val postgresConfiguration = Postgres.Configuration(
-            username = System.getenv("POSTGRES_USERNAME"),
-            password = System.getenv("POSTGRES_PASSWORD"),
-            host = System.getenv("POSTGRES_HOST"),
-            port = System.getenv("POSTGRES_PORT").toInt(),
+            username = env("POSTGRES_USERNAME"),
+            password = env("POSTGRES_PASSWORD"),
+            host = env("POSTGRES_HOST"),
+            port = env("POSTGRES_PORT").toInt(),
         )
         Postgres(postgresConfiguration).connect().getOrThrow()
         val groupsRepository = PostgresGroupsRepository()
         val usersTokensRepository = PostgresUsersTokensRepository()
         val usersTokensService = GrpcUsersTokensService(UsersTokensServiceImpl(usersTokensRepository))
         val grpcServerConfiguration = GrpcServer.Configuration(
-            port = System.getenv("GRPC_PORT").toInt(),
+            port = env("GRPC_PORT").toInt(),
             services = listOf(usersTokensService),
         )
         val grpcServer = GrpcServer(grpcServerConfiguration)
@@ -66,4 +61,7 @@ object Launcher {
         rabbitMqGroupsService.setup()
         grpcService.join()
     }
+
+    private fun env(key: String): String =
+        System.getenv(key) ?: error("The required environment variable `$key` is not set!")
 }
