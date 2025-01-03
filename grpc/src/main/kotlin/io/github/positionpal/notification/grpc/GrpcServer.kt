@@ -19,10 +19,10 @@ class GrpcServer(
      * Configuration for the gRPC server.
      * @property port The port where the server will listen for incoming connections.
      * @property services The list of services that the server will expose.
-     * @property shutdownTimeout The maximum time to wait for the server to shut down.
+     * @property shutdownTimeout The maximum time to wait for the server to shut down. Default is `3000` milliseconds.
      */
     data class Configuration(
-        val port: Int = 50051,
+        val port: Int,
         val services: List<BindableService> = emptyList(),
         val shutdownTimeout: Long = 3_000L,
     )
