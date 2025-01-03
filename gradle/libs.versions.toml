@@ -5,7 +5,7 @@ grpc-kotlin = "1.4.1"
 kernel = "0.10.0"
 kotlin = "2.1.0"
 kotest = "5.9.1"
-mockito = "5.14.2"
+mockito = "5.15.2"
 proto = "4.29.2"
 protobuf = "0.9.4"
 
