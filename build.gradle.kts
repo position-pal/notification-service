@@ -9,6 +9,7 @@ plugins {
         alias(kotlin.qa)
         alias(kotlin.dokka)
         alias(gradle.docker.compose)
+        alias(git.sensitive.semantic.versioning)
     }
 }
 
@@ -75,4 +76,9 @@ subprojects {
     afterEvaluate {
         rootProject.dotenv?.let { injectInto(JavaExec::class, Test::class) environmentsFrom it }
     }
+}
+
+/* Set the project version based on the git history. */
+gitSemVer {
+    assignGitSemanticVersion()
 }

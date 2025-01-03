@@ -1,5 +1,6 @@
 plugins {
     application
+    alias(libs.plugins.shadowJar)
 }
 
 dependencies {

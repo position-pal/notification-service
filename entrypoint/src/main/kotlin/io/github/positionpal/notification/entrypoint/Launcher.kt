@@ -25,28 +25,33 @@ object Launcher {
      */
     @JvmStatic
     fun main(args: Array<String>): Unit = runBlocking {
-        val firebaseConfiguration = Firebase.Configuration(System.getenv("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"))
+        val firebaseConfiguration = Firebase.Configuration(
+            serviceAccountFilePath = env("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"),
+        )
         val firebase = Firebase.create(firebaseConfiguration).getOrThrow()
         val rabbitMqConfiguration = RabbitMQ.Configuration(
-            host = System.getenv("RABBITMQ_HOST"),
-            virtualHost = System.getenv("RABBITMQ_VIRTUAL_HOST"),
-            port = System.getenv("RABBITMQ_PORT").toInt(),
-            username = System.getenv("RABBITMQ_USERNAME"),
-            password = System.getenv("RABBITMQ_PASSWORD"),
+            host = env("RABBITMQ_HOST"),
+            virtualHost = env("RABBITMQ_VIRTUAL_HOST"),
+            port = env("RABBITMQ_PORT").toInt(),
+            username = env("RABBITMQ_USERNAME"),
+            password = env("RABBITMQ_PASSWORD"),
         )
         val postgresConfiguration = Postgres.Configuration(
-            databaseName = System.getenv("POSTGRES_DB_NAME") ?: "notifications_service",
-            username = System.getenv("POSTGRES_USERNAME"),
-            password = System.getenv("POSTGRES_PASSWORD"),
-            host = System.getenv("POSTGRES_HOST"),
-            port = System.getenv("POSTGRES_PORT").toInt(),
+            username = env("POSTGRES_USERNAME"),
+            password = env("POSTGRES_PASSWORD"),
+            host = env("POSTGRES_HOST"),
+            port = env("POSTGRES_PORT").toInt(),
         )
         Postgres(postgresConfiguration).connect().getOrThrow()
         val groupsRepository = PostgresGroupsRepository()
         val usersTokensRepository = PostgresUsersTokensRepository()
         val usersTokensService = GrpcUsersTokensService(UsersTokensServiceImpl(usersTokensRepository))
-        val server = GrpcServer(GrpcServer.Configuration(services = listOf(usersTokensService)))
-        val grpcService = launch { server.start() }
+        val grpcServerConfiguration = GrpcServer.Configuration(
+            port = env("GRPC_PORT").toInt(),
+            services = listOf(usersTokensService),
+        )
+        val grpcServer = GrpcServer(grpcServerConfiguration)
+        val grpcService = launch { grpcServer.start() }
         val rabbitMqNotificationService = RabbitMQNotificationsConsumer(
             FirebaseCloudNotificationPublisher(firebase, usersTokensRepository, groupsRepository),
             rabbitMqConfiguration,
@@ -56,4 +61,7 @@ object Launcher {
         rabbitMqGroupsService.setup()
         grpcService.join()
     }
+
+    private fun env(key: String): String =
+        System.getenv(key) ?: error("The required environment variable `$key` is not set!")
 }

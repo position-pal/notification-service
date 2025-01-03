@@ -12,14 +12,14 @@ class Postgres(private val configuration: Configuration) : ConnectionFactory<Dat
 
     /**
      * The configuration to connect to the PostgresSQL database.
-     * @property databaseName the name of the database
+     * @property databaseName the name of the database. Default is `notifications_service`.
      * @property username the username to connect to the database
      * @property password the password to connect to the database
      * @property host the host address of the database
      * @property port the port of the database
      */
     data class Configuration(
-        val databaseName: String,
+        val databaseName: String = "notifications_service",
         val username: String,
         val password: String,
         val host: String,
