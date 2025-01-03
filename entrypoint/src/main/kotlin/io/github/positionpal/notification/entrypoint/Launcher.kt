@@ -13,6 +13,8 @@ import io.github.positionpal.notification.storage.groups.PostgresGroupsRepositor
 import io.github.positionpal.notification.storage.tokens.PostgresUsersTokensRepository
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import java.nio.file.Paths
+import kotlin.io.path.pathString
 
 /**
  * The entry point of the service.
@@ -25,7 +27,12 @@ object Launcher {
      */
     @JvmStatic
     fun main(args: Array<String>): Unit = runBlocking {
-        val firebaseConfiguration = Firebase.Configuration(System.getenv("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"))
+        val rootProjectDir = Paths.get("").toAbsolutePath().normalize().parent
+        val firebaseConfiguration = Firebase.Configuration(
+            serviceAccountFilePath = rootProjectDir
+                .resolve(System.getenv("FIREBASE_SERVICE_ACCOUNT_FILE_PATH"))
+                .pathString,
+        )
         val firebase = Firebase.create(firebaseConfiguration).getOrThrow()
         val rabbitMqConfiguration = RabbitMQ.Configuration(
             host = System.getenv("RABBITMQ_HOST"),
@@ -35,7 +42,6 @@ object Launcher {
             password = System.getenv("RABBITMQ_PASSWORD"),
         )
         val postgresConfiguration = Postgres.Configuration(
-            databaseName = System.getenv("POSTGRES_DB_NAME") ?: "notifications_service",
             username = System.getenv("POSTGRES_USERNAME"),
             password = System.getenv("POSTGRES_PASSWORD"),
             host = System.getenv("POSTGRES_HOST"),
@@ -45,8 +51,12 @@ object Launcher {
         val groupsRepository = PostgresGroupsRepository()
         val usersTokensRepository = PostgresUsersTokensRepository()
         val usersTokensService = GrpcUsersTokensService(UsersTokensServiceImpl(usersTokensRepository))
-        val server = GrpcServer(GrpcServer.Configuration(services = listOf(usersTokensService)))
-        val grpcService = launch { server.start() }
+        val grpcServerConfiguration = GrpcServer.Configuration(
+            port = System.getenv("GRPC_PORT").toInt(),
+            services = listOf(usersTokensService),
+        )
+        val grpcServer = GrpcServer(grpcServerConfiguration)
+        val grpcService = launch { grpcServer.start() }
         val rabbitMqNotificationService = RabbitMQNotificationsConsumer(
             FirebaseCloudNotificationPublisher(firebase, usersTokensRepository, groupsRepository),
             rabbitMqConfiguration,

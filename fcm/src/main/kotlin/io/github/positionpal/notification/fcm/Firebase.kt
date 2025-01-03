@@ -7,8 +7,8 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.Message
 import com.google.firebase.messaging.Notification
 import io.github.positionpal.entities.NotificationMessage
+import java.io.File
 import java.io.FileInputStream
-import java.lang.Thread.currentThread
 
 /**
  * A Firebase client facade to send notifications.
@@ -17,7 +17,7 @@ class Firebase private constructor(private val app: FirebaseMessaging) {
 
     /**
      * Configuration for the Firebase client.
-     * @property serviceAccountFilePath The path to the service account file.
+     * @property serviceAccountFilePath The absolute path to the service account file.
      */
     data class Configuration(
         val serviceAccountFilePath: String,
@@ -44,9 +44,10 @@ class Firebase private constructor(private val app: FirebaseMessaging) {
         /** Creates a new instance of [Firebase] using the given [configuration]. */
         fun create(configuration: Configuration): Result<Firebase> = runCatching {
             val serviceAccountFilePath =
-                checkNotNull(currentThread().contextClassLoader.getResource(configuration.serviceAccountFilePath)) {
-                    "Unable to access resource ${configuration.serviceAccountFilePath}"
-                }.toURI().path
+                File(configuration.serviceAccountFilePath)
+                    .takeIf { it.exists() && it.isFile && it.extension == "json" }
+                    ?.absolutePath
+                    ?: error("${configuration.serviceAccountFilePath} is not present or is not a valid account file!")
             val credentials = GoogleCredentials.fromStream(FileInputStream(serviceAccountFilePath))
             val options = FirebaseOptions.builder()
                 .setCredentials(credentials)
