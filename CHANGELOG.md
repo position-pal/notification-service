@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/position-pal/notification-service/compare/2.0.0...2.0.1) (2025-01-06)
+
+### Bug Fixes
+
+* update release config to include `RELEASE STATUS` ([c70e7f2](https://github.com/position-pal/notification-service/commit/c70e7f2eeeb93c095bfde7646f24b402ebaf526a))
+
 ## [2.0.0](https://github.com/position-pal/notification-service/compare/1.0.3...2.0.0) (2025-01-06)
 
 ### ⚠ BREAKING CHANGES
