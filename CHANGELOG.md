@@ -1,3 +1,38 @@
+## [2.0.0](https://github.com/position-pal/notification-service/compare/1.0.3...2.0.0) (2025-01-06)
+
+### ⚠ BREAKING CHANGES
+
+* **entrypoint:** add support to jar, making fail fast with an explanatory message in case an env is not set, and turn service account path absolute to make it accessible from fatjar
+* **entrypoint:** add env variable to configure grpc port, drop postgres db name and make the service account path relative to root project dir
+
+### Dependency updates
+
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.15 ([#52](https://github.com/position-pal/notification-service/issues/52)) ([fece18e](https://github.com/position-pal/notification-service/commit/fece18ea72a86e767e5d1462b71832118bc4cd69))
+* **deps:** update dependency gradle to v8.12 ([#51](https://github.com/position-pal/notification-service/issues/51)) ([329f336](https://github.com/position-pal/notification-service/commit/329f336e332c39b04d36f8199ccd9fa4feef0a19))
+* **deps:** update dependency io.mockk:mockk to v1.13.14 ([#50](https://github.com/position-pal/notification-service/issues/50)) ([ae0f891](https://github.com/position-pal/notification-service/commit/ae0f891c42e8ab35a77d6c5bdb80190d74b9be6b))
+* **deps:** update dependency org.mockito:mockito-core to v5.15.2 ([#58](https://github.com/position-pal/notification-service/issues/58)) ([5792000](https://github.com/position-pal/notification-service/commit/579200033effa3531fdfff45dea00b8fdaa726f7))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.117 ([#53](https://github.com/position-pal/notification-service/issues/53)) ([318fe85](https://github.com/position-pal/notification-service/commit/318fe85344a88a7a742facdf3cf443507ae18dd0))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.18 ([#54](https://github.com/position-pal/notification-service/issues/54)) ([96d86f1](https://github.com/position-pal/notification-service/commit/96d86f17f7aa1d7fc55620e15209b9f68dbee831))
+* **deps:** update postgres:17.2 docker digest to 79c927b ([#55](https://github.com/position-pal/notification-service/issues/55)) ([a6a368c](https://github.com/position-pal/notification-service/commit/a6a368cdd5b21c108cd4d66869be9a8be202fa1c))
+* **deps:** update postgres:17.2 docker digest to 888402a ([#56](https://github.com/position-pal/notification-service/issues/56)) ([33dbeb1](https://github.com/position-pal/notification-service/commit/33dbeb11ce40705d2510fa64bccf260ab5b1a9d8))
+
+### Bug Fixes
+
+* **build:** replace equals with binary operator in ci check ([0619634](https://github.com/position-pal/notification-service/commit/06196343858fa33273d25d5bfa1c33f319fc5316))
+
+### Build and continuous integration
+
+* add dockerfile and automatize its publish ([30c1d2c](https://github.com/position-pal/notification-service/commit/30c1d2c3e2c4329885ae8a9b657b0aa5273e7afa))
+
+### General maintenance
+
+* **readme:** add service informations for deployment ([3d26152](https://github.com/position-pal/notification-service/commit/3d26152c3520e2e448e8c7333d12bf165f5ce22e))
+
+### Refactoring
+
+* **entrypoint:** add env variable to configure grpc port, drop postgres db name and make the service account path relative to root project dir ([50ad0eb](https://github.com/position-pal/notification-service/commit/50ad0eb76d4b34bf9c1519960d92c8aa152cd4b6))
+* **entrypoint:** add support to jar, making fail fast with an explanatory message in case an env is not set, and turn service account path absolute to make it accessible from fatjar ([145adfb](https://github.com/position-pal/notification-service/commit/145adfb9927c97912d900444d2a45369d4d18533))
+
 ## [1.0.3](https://github.com/position-pal/notification-service/compare/1.0.2...1.0.3) (2024-12-21)
 
 ### Dependency updates
