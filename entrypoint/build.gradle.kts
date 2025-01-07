@@ -8,6 +8,7 @@ dependencies {
     implementation(project(":storage"))
     implementation(project(":mom"))
     implementation(project(":fcm"))
+    testImplementation(libs.archunit)
 }
 
 application {
