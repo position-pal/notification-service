@@ -1,5 +1,5 @@
 [versions]
-exposed = "0.57.0"
+exposed = "0.58.0"
 grpc = "1.69.0"
 grpc-kotlin = "1.4.1"
 kernel = "0.10.0"
