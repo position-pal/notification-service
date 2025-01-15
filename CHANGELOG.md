@@ -1,3 +1,33 @@
+## [2.1.0](https://github.com/position-pal/notification-service/compare/2.0.1...2.1.0) (2025-01-15)
+
+### Features
+
+* **docker:** add support for multi-platform docker image ([6c3fe93](https://github.com/position-pal/notification-service/commit/6c3fe93108e6c42dac8b952352cba26a1d1ad2a5))
+
+### Dependency updates
+
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.16 ([#59](https://github.com/position-pal/notification-service/issues/59)) ([491a5cf](https://github.com/position-pal/notification-service/commit/491a5cf91488deb8ee3d4e7338d55f6ea88816a6))
+* **deps:** update dependency com.google.firebase:firebase-admin to v9.4.3 ([#65](https://github.com/position-pal/notification-service/issues/65)) ([eb40d8c](https://github.com/position-pal/notification-service/commit/eb40d8cced6eae8b8c405db18e26f4a2a3903fdf))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.118 ([#62](https://github.com/position-pal/notification-service/issues/62)) ([5391509](https://github.com/position-pal/notification-service/commit/5391509082869c9fa4a7c9e68c1e3a0b57f899c3))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.119 ([#67](https://github.com/position-pal/notification-service/issues/67)) ([be3343c](https://github.com/position-pal/notification-service/commit/be3343c085875fca6a2baec8e62311252f66ed42))
+* **deps:** update exposed to v0.58.0 ([#69](https://github.com/position-pal/notification-service/issues/69)) ([333bdc6](https://github.com/position-pal/notification-service/commit/333bdc6a519f87e055cb47139abd472421f4fb73))
+* **deps:** update node.js to 22.13 ([#61](https://github.com/position-pal/notification-service/issues/61)) ([da321e7](https://github.com/position-pal/notification-service/commit/da321e75b67c0bfccb64b65ceb0ab210679e69ea))
+* **deps:** update postgres:17.2 docker digest to 87ec5e0 ([#68](https://github.com/position-pal/notification-service/issues/68)) ([42db2b7](https://github.com/position-pal/notification-service/commit/42db2b71e93e7afa9355cc45ec6e3a5e49f3b31a))
+* **deps:** update proto to v4.29.3 ([#63](https://github.com/position-pal/notification-service/issues/63)) ([1792a51](https://github.com/position-pal/notification-service/commit/1792a51cb699107bf4cb76e4bfe02795a46874b4))
+
+### Tests
+
+* add architectural unit test ([313afe3](https://github.com/position-pal/notification-service/commit/313afe307ac58227d322245b6fd0bfdcf8097089))
+
+### Build and continuous integration
+
+* **deps:** update actions/upload-artifact action to v4.6.0 ([#64](https://github.com/position-pal/notification-service/issues/64)) ([82bba1e](https://github.com/position-pal/notification-service/commit/82bba1e4bbb61a95b1d7732616dea671632b56c5))
+* **deps:** update docker/build-push-action digest to b32b51a ([#60](https://github.com/position-pal/notification-service/issues/60)) ([a2e2855](https://github.com/position-pal/notification-service/commit/a2e285507c227181314f8d4443d11de9c1492878))
+
+### General maintenance
+
+* update logging configuration to use INFO level in production ([b11b1dd](https://github.com/position-pal/notification-service/commit/b11b1dd963be25c4bdea4de7605099ebaab0ac9f))
+
 ## [2.0.1](https://github.com/position-pal/notification-service/compare/2.0.0...2.0.1) (2025-01-06)
 
 ### Bug Fixes
