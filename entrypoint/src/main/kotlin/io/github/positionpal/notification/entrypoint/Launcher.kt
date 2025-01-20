@@ -57,8 +57,12 @@ object Launcher {
             rabbitMqConfiguration,
         )
         val rabbitMqGroupsService = RabbitMQGroupsEventsConsumer(groupsRepository, rabbitMqConfiguration)
-        rabbitMqNotificationService.setup()
-        rabbitMqGroupsService.setup()
+        rabbitMqNotificationService.setup().onFailure {
+            error("Failed to setup notification RabbitMQ adapter due to ${it.message}")
+        }
+        rabbitMqGroupsService.setup().onFailure {
+            error("Failed to setup group service rabbitMQ adapter due to ${it.message}")
+        }
         grpcService.join()
     }
 
