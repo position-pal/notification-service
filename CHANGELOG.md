@@ -1,3 +1,20 @@
+## [2.1.1](https://github.com/position-pal/notification-service/compare/2.1.0...2.1.1) (2025-01-20)
+
+### Dependency updates
+
+* **deps:** update dependency org.postgresql:postgresql to v42.7.5 ([#71](https://github.com/position-pal/notification-service/issues/71)) ([d3399ba](https://github.com/position-pal/notification-service/commit/d3399bac18f86c600537deab012d09ecd1fb34af))
+* **deps:** update grpc-java monorepo to v1.69.1 ([#73](https://github.com/position-pal/notification-service/issues/73)) ([9418f0e](https://github.com/position-pal/notification-service/commit/9418f0e94f9bea2ff759cfd9dfa56359bd9ff9d0))
+
+### Bug Fixes
+
+* **entrypoint:** fail fast on rabbitmq error ([#74](https://github.com/position-pal/notification-service/issues/74)) ([43eaf8d](https://github.com/position-pal/notification-service/commit/43eaf8d44c9849bf76824a81e295a798cf9d702f))
+
+### Build and continuous integration
+
+* **deps:** pin dependencies ([#72](https://github.com/position-pal/notification-service/issues/72)) ([ea5e4e2](https://github.com/position-pal/notification-service/commit/ea5e4e2e37efa49604aef9649c683b0e801f7257))
+* **deps:** update docker/build-push-action digest to 67a2d40 ([#70](https://github.com/position-pal/notification-service/issues/70)) ([579e552](https://github.com/position-pal/notification-service/commit/579e5525d5a459fcbc4c48f3b20e2c07b6a512bd))
+* speed up avoiding to separate check and test tasks since in some modules test requires to bring up heavy docker containers ([2a10d29](https://github.com/position-pal/notification-service/commit/2a10d298b9e008fbe2ed3c65c436a85f97a8e9d1))
+
 ## [2.1.0](https://github.com/position-pal/notification-service/compare/2.0.1...2.1.0) (2025-01-15)
 
 ### Features
