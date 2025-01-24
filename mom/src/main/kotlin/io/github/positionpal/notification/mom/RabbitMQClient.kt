@@ -49,7 +49,9 @@ internal class RabbitMQClient(private val connection: Connection) : AutoCloseabl
     ) = registerCallbackTo(declareAndBindQueueTo(exchange), callback)
 
     fun Channel.declareAndBindQueueTo(exchange: String, routingKey: String = ""): QueueName =
-        queueDeclare().queue.also { queueBind(it, exchange, routingKey) }
+        queueDeclare("${exchange}_notification_service", true, false, false, emptyMap())
+            .queue
+            .also { queueBind(it, exchange, routingKey) }
 
     fun Channel.registerCallbackTo(queue: String, callback: (AMQP.BasicProperties, ByteArray) -> Unit) {
         basicConsume(
