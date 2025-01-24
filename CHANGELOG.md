@@ -1,3 +1,19 @@
+## [2.1.2](https://github.com/position-pal/notification-service/compare/2.1.1...2.1.2) (2025-01-24)
+
+### Dependency updates
+
+* **deps:** update eclipse-temurin:21 docker digest to d59ca49 ([#75](https://github.com/position-pal/notification-service/issues/75)) ([74816e5](https://github.com/position-pal/notification-service/commit/74816e5c1b91acfadbf0e763618692a921e5e2cc))
+* **deps:** update grpc-java monorepo to v1.70.0 ([#76](https://github.com/position-pal/notification-service/issues/76)) ([9ca74cc](https://github.com/position-pal/notification-service/commit/9ca74cc5334383da33821615fa67ba94fc6c64bc))
+
+### Bug Fixes
+
+* **rabbitmq:** use durable, non-autodelete and non-exclusive queues ([#79](https://github.com/position-pal/notification-service/issues/79)) ([d96646e](https://github.com/position-pal/notification-service/commit/d96646e352f8ea8ee828d11e5c38ea4f205e32eb))
+
+### Build and continuous integration
+
+* **deps:** update dawidd6/action-download-artifact action to v8 ([#77](https://github.com/position-pal/notification-service/issues/77)) ([4582dcd](https://github.com/position-pal/notification-service/commit/4582dcd1d85684ddde7db4ab28cb6523e467e17b))
+* **deps:** update docker/build-push-action digest to ca877d9 ([#78](https://github.com/position-pal/notification-service/issues/78)) ([c46bc77](https://github.com/position-pal/notification-service/commit/c46bc77dfc49c25ea8cb0adedec087b60887f69a))
+
 ## [2.1.1](https://github.com/position-pal/notification-service/compare/2.1.0...2.1.1) (2025-01-20)
 
 ### Dependency updates
