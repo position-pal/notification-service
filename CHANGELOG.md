@@ -1,3 +1,14 @@
+## [2.1.3](https://github.com/position-pal/notification-service/compare/2.1.2...2.1.3) (2025-01-28)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.10 ([#82](https://github.com/position-pal/notification-service/issues/82)) ([8e5649a](https://github.com/position-pal/notification-service/commit/8e5649a6083a8ea14179bb8f8e8977feee077bf3))
+* **deps:** update dependency gradle to v8.12.1 ([#80](https://github.com/position-pal/notification-service/issues/80)) ([59c5021](https://github.com/position-pal/notification-service/commit/59c502119c98453d650e44c28f15b907961f6117))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.2.0 ([#81](https://github.com/position-pal/notification-service/issues/81)) ([6927ca0](https://github.com/position-pal/notification-service/commit/6927ca09ba923cd95a21cd90419f6555bd5e3b00))
+
 ## [2.1.2](https://github.com/position-pal/notification-service/compare/2.1.1...2.1.2) (2025-01-24)
 
 ### Dependency updates
