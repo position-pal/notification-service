@@ -1,3 +1,17 @@
+## [2.2.0](https://github.com/position-pal/notification-service/compare/2.1.3...2.2.0) (2025-02-01)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v0.10.1 ([#88](https://github.com/position-pal/notification-service/issues/88)) ([54829d9](https://github.com/position-pal/notification-service/commit/54829d9fd861310dabc1f7240efdc2824a7b7470))
+* **deps:** update eclipse-temurin:21 docker digest to 5aa48ef ([#87](https://github.com/position-pal/notification-service/issues/87)) ([954e5db](https://github.com/position-pal/notification-service/commit/954e5db2cf2781f7c5f5c861c5493568ff88ab12))
+* **deps:** update plugin com.gradle.develocity to v3.19.1 ([#89](https://github.com/position-pal/notification-service/issues/89)) ([83ba002](https://github.com/position-pal/notification-service/commit/83ba0022610ff7f98460e62bd515b88449c08770))
+* **deps:** update plugin git-sensitive-semantic-versioning to v3.1.10 ([#84](https://github.com/position-pal/notification-service/issues/84)) ([50bdc15](https://github.com/position-pal/notification-service/commit/50bdc157e668bfbf1554abea253666320af80998))
+* **deps:** update rabbitmq:4-management docker digest to f100517 ([#86](https://github.com/position-pal/notification-service/issues/86)) ([3af7f4f](https://github.com/position-pal/notification-service/commit/3af7f4f0b3ea63ce273a9698d13cff7b8b2b5036))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-java digest to 3a4f6e1 ([#85](https://github.com/position-pal/notification-service/issues/85)) ([41ee441](https://github.com/position-pal/notification-service/commit/41ee4414b3d6edb8b90127bc48b07b28224cd9ac))
+
 ## [2.1.3](https://github.com/position-pal/notification-service/compare/2.1.2...2.1.3) (2025-01-28)
 
 ### Dependency updates
