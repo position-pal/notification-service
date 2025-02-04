@@ -11,7 +11,7 @@ object ProtoConversion {
 
     /** @return a [Proto.UserToken] message class from the given [UserToken]. */
     fun UserToken.toProto(): Proto.UserToken = userToken {
-        user = this@toProto.userId.username()
+        user = this@toProto.userId.value()
         token = this@toProto.token
     }
 }

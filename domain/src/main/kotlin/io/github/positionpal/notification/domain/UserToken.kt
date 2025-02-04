@@ -22,5 +22,5 @@ interface UserToken {
 }
 
 private data class UserTokenImpl(override val userId: UserId, override val token: Token) : UserToken {
-    override fun toString(): String = "UserToken(userId=${userId.username()}, token=$token)"
+    override fun toString(): String = "UserToken(userId=${userId.value()}, token=$token)"
 }

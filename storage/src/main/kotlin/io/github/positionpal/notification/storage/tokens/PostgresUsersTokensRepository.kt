@@ -24,7 +24,7 @@ class PostgresUsersTokensRepository(
         .mapCatching {
             newSuspendedTransaction(dispatcher) {
                 UsersTokensTable.insert {
-                    it[userId] = userToken.userId.username()
+                    it[userId] = userToken.userId.value()
                     it[token] = userToken.token
                 }
             }
@@ -32,7 +32,7 @@ class PostgresUsersTokensRepository(
 
     override suspend fun get(userId: UserId): Result<Set<UserToken>> = runCatching {
         newSuspendedTransaction(dispatcher) {
-            UsersTokensTable.selectAll().where { UsersTokensTable.userId eq userId.username() }
+            UsersTokensTable.selectAll().where { UsersTokensTable.userId eq userId.value() }
                 .map { UserToken(userId, it[UsersTokensTable.token]) }
                 .toSet()
         }
@@ -43,7 +43,7 @@ class PostgresUsersTokensRepository(
         .mapCatching {
             newSuspendedTransaction(dispatcher) {
                 UsersTokensTable.deleteWhere {
-                    userId eq userToken.userId.username() and (token eq userToken.token)
+                    userId eq userToken.userId.value() and (token eq userToken.token)
                 }
             }
         }
