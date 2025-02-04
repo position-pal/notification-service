@@ -1,12 +1,12 @@
 package io.github.positionpal.notification.mom
 
-import io.github.positionpal.AddedMemberToGroup
 import io.github.positionpal.AvroSerializer
-import io.github.positionpal.MessageType
-import io.github.positionpal.RemovedMemberToGroup
-import io.github.positionpal.User
 import io.github.positionpal.entities.GroupId
+import io.github.positionpal.entities.User
 import io.github.positionpal.entities.UserId
+import io.github.positionpal.events.AddedMemberToGroup
+import io.github.positionpal.events.EventType
+import io.github.positionpal.events.RemovedMemberToGroup
 import io.github.positionpal.notification.application.groups.GroupsRepository
 import io.github.positionpal.notification.mom.RabbitMQGroupsEventsConsumer.Companion.GROUP_UPDATES_EXCHANGE
 import io.kotest.assertions.nondeterministic.eventually
@@ -28,20 +28,20 @@ class RabbitMQGroupsAdapterTest : WordSpec({
                     it.setup()
                     publish(
                         GROUP_UPDATES_EXCHANGE,
-                        MessageType.MEMBER_ADDED.name,
+                        EventType.MEMBER_ADDED.name,
                         serializer.serializeAddedMemberToGroup(addedEvent),
                     )
                     publish(
                         GROUP_UPDATES_EXCHANGE,
-                        MessageType.MEMBER_REMOVED.name,
+                        EventType.MEMBER_REMOVED.name,
                         serializer.serializeRemovedMemberToGroup(removedEvent),
                     )
                     eventually(eventuallyConfig) {
                         coVerify(exactly = 1) {
-                            fakeGroupsRepository.addMember(testGroup, UserId.create(testUser.id()))
+                            fakeGroupsRepository.addMember(testGroup, testUser.id())
                         }
                         coVerify(exactly = 1) {
-                            fakeGroupsRepository.removeMember(testGroup, UserId.create(testUser.id()))
+                            fakeGroupsRepository.removeMember(testGroup, testUser.id())
                         }
                     }
                 }
@@ -57,12 +57,12 @@ class RabbitMQGroupsAdapterTest : WordSpec({
             interval = 200.milliseconds
         }
         private val testGroup = GroupId.create("astro")
-        private val testUser = User.create("luke", "Luke", "Skywalker", "lukesky@gmail.com", "member")
-        private val addedEvent = AddedMemberToGroup.create(testGroup.value(), testUser)
-        private val removedEvent = RemovedMemberToGroup.create(testGroup.value(), testUser)
+        private val testUser = User.create(UserId.create("luke"), "Luke", "Skywalker", "lukesky@gmail.com")
+        private val addedEvent = AddedMemberToGroup.create(testGroup, testUser)
+        private val removedEvent = RemovedMemberToGroup.create(testGroup, testUser)
         private val fakeGroupsRepository = mockk<GroupsRepository> {
-            coEvery { addMember(testGroup, UserId.create(testUser.id())) } returns Result.success(Unit)
-            coEvery { removeMember(testGroup, UserId.create(testUser.id())) } returns Result.success(Unit)
+            coEvery { addMember(testGroup, testUser.id()) } returns Result.success(Unit)
+            coEvery { removeMember(testGroup, testUser.id()) } returns Result.success(Unit)
         }
     }
 }

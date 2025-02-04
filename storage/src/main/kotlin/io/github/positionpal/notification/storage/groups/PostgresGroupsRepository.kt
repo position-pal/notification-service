@@ -18,7 +18,7 @@ class PostgresGroupsRepository(private val dispatcher: CoroutineDispatcher = Dis
         newSuspendedTransaction(dispatcher) {
             UsersGroupsTable.insert {
                 it[UsersGroupsTable.groupId] = groupId.value()
-                it[UsersGroupsTable.userId] = userId.username()
+                it[UsersGroupsTable.userId] = userId.value()
             }
         }
     }
@@ -26,7 +26,7 @@ class PostgresGroupsRepository(private val dispatcher: CoroutineDispatcher = Dis
     override suspend fun removeMember(groupId: GroupId, userId: UserId): Result<Unit> = runCatching {
         newSuspendedTransaction(dispatcher) {
             UsersGroupsTable.deleteWhere {
-                (UsersGroupsTable.groupId eq groupId.value()) and (UsersGroupsTable.userId eq userId.username())
+                (UsersGroupsTable.groupId eq groupId.value()) and (UsersGroupsTable.userId eq userId.value())
             }
         }
     }
@@ -41,7 +41,7 @@ class PostgresGroupsRepository(private val dispatcher: CoroutineDispatcher = Dis
 
     override suspend fun getGroupsOf(userId: UserId): Result<Set<GroupId>> = runCatching {
         newSuspendedTransaction(dispatcher) {
-            UsersGroupsTable.selectAll().where { UsersGroupsTable.userId eq userId.username() }
+            UsersGroupsTable.selectAll().where { UsersGroupsTable.userId eq userId.value() }
                 .map { GroupId.create(it[UsersGroupsTable.groupId]) }
                 .toSet()
         }
