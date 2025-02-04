@@ -2,7 +2,7 @@
 exposed = "0.58.0"
 grpc = "1.70.0"
 grpc-kotlin = "1.4.1"
-kernel = "0.10.1"
+kernel = "0.11.1"
 kotlin = "2.1.10"
 kotest = "5.9.1"
 mockito = "5.15.2"
