@@ -1,3 +1,17 @@
+## [2.3.0](https://github.com/position-pal/notification-service/compare/2.2.0...2.3.0) (2025-02-04)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1 (major) ([#92](https://github.com/position-pal/notification-service/issues/92)) ([37fc540](https://github.com/position-pal/notification-service/commit/37fc540a6fafb5daca09fe8e9579f23340513b9c))
+* **deps:** update eclipse-temurin:21 docker digest to 4e8ddd3 ([#94](https://github.com/position-pal/notification-service/issues/94)) ([0520331](https://github.com/position-pal/notification-service/commit/052033153900829ed1a950b0a733fe3800b425e6))
+* **deps:** update eclipse-temurin:21 docker digest to eacf3d6 ([#97](https://github.com/position-pal/notification-service/issues/97)) ([2e547bf](https://github.com/position-pal/notification-service/commit/2e547bfde6475c5482b4d40ad063471ca8d22d09))
+* **deps:** update plugin git-sensitive-semantic-versioning to v4 ([#93](https://github.com/position-pal/notification-service/issues/93)) ([57c9b48](https://github.com/position-pal/notification-service/commit/57c9b48fe46f11de4d8978ba5b80e4dc8ad6ca0c))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.20 ([#90](https://github.com/position-pal/notification-service/issues/90)) ([0e040c2](https://github.com/position-pal/notification-service/commit/0e040c2dd1c5a564a27a14baf8b1459402d50dc5))
+* **deps:** update postgres:17.2 docker digest to 21d2450 ([#98](https://github.com/position-pal/notification-service/issues/98)) ([7c7ff83](https://github.com/position-pal/notification-service/commit/7c7ff831ef9d959904b537ddfc71b99d386c6c31))
+* **deps:** update postgres:17.2 docker digest to ff11c19 ([#95](https://github.com/position-pal/notification-service/issues/95)) ([b6bbce5](https://github.com/position-pal/notification-service/commit/b6bbce5a57ed85566189c83d7de9a39bf73529ea))
+* **deps:** update rabbitmq:4-management docker digest to 1848f46 ([#99](https://github.com/position-pal/notification-service/issues/99)) ([5a97fb6](https://github.com/position-pal/notification-service/commit/5a97fb6ef94d350e23bc1f7fd8007d60d1fc3ffe))
+* **deps:** update rabbitmq:4-management docker digest to cc4c4f7 ([#96](https://github.com/position-pal/notification-service/issues/96)) ([84d5389](https://github.com/position-pal/notification-service/commit/84d5389068b51f4b2de1ea29a49d2b57a0dbeb00))
+
 ## [2.2.0](https://github.com/position-pal/notification-service/compare/2.1.3...2.2.0) (2025-02-01)
 
 ### Dependency updates
