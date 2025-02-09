@@ -23,7 +23,7 @@ class RabbitMQNotificationsConsumer(
     private val serializer = AvroSerializer()
 
     override fun RabbitMQClient.onChannelCreated(channel: Channel) {
-        channel.declareDirectExchange(PUSH_NOTIFICATIONS_EXCHANGE)
+        channel.declareHeadersExchange(PUSH_NOTIFICATIONS_EXCHANGE)
         channel.declareBindAndRegisterCallbackTo(PUSH_NOTIFICATIONS_EXCHANGE) { props, body ->
             when (props.headers["message_type"].toString()) {
                 CommandType.GROUP_WISE_NOTIFICATION.name -> handleGroupWiseNotification(body)
