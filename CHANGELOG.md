@@ -1,3 +1,28 @@
+## [2.3.1](https://github.com/position-pal/notification-service/compare/2.3.0...2.3.1) (2025-02-09)
+
+### Dependency updates
+
+* **deps:** update dependency com.rabbitmq:amqp-client to v5.25.0 ([#107](https://github.com/position-pal/notification-service/issues/107)) ([c4228df](https://github.com/position-pal/notification-service/commit/c4228df8bcc68fac87b6ccc58ea43d757989dc4c))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.121 ([#111](https://github.com/position-pal/notification-service/issues/111)) ([bbf2896](https://github.com/position-pal/notification-service/commit/bbf2896edbe80f980b48d68bfffdf404864c56f2))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.122 ([#112](https://github.com/position-pal/notification-service/issues/112)) ([b748d4a](https://github.com/position-pal/notification-service/commit/b748d4ae2f8d11c1bd7bde07507325083777d4fe))
+* **deps:** update eclipse-temurin:21 docker digest to 4f53cf2 ([#101](https://github.com/position-pal/notification-service/issues/101)) ([4bad020](https://github.com/position-pal/notification-service/commit/4bad0205cb67f49c446eab3a88eb2bbcf05a7ef8))
+* **deps:** update exposed to v0.59.0 ([#100](https://github.com/position-pal/notification-service/issues/100)) ([4ccb3fd](https://github.com/position-pal/notification-service/commit/4ccb3fd6ceedb0ef5981836a7817bcc6e4b07254))
+* **deps:** update postgres:17.2 docker digest to 3267c50 ([#106](https://github.com/position-pal/notification-service/issues/106)) ([d6d7267](https://github.com/position-pal/notification-service/commit/d6d726781558fa6255d1d4ae5783b8d728a8ed18))
+* **deps:** update postgres:17.2 docker digest to 4e77668 ([#105](https://github.com/position-pal/notification-service/issues/105)) ([ca6c01f](https://github.com/position-pal/notification-service/commit/ca6c01f1c44aaf62f061f9f85a7ad1e32a485cb9))
+* **deps:** update postgres:17.2 docker digest to 8db0b46 ([#102](https://github.com/position-pal/notification-service/issues/102)) ([a3cc86a](https://github.com/position-pal/notification-service/commit/a3cc86aa33b8bd7c073eb7624f73bd3b93e53c2a))
+* **deps:** update rabbitmq:4-management docker digest to 697da87 ([#110](https://github.com/position-pal/notification-service/issues/110)) ([961a966](https://github.com/position-pal/notification-service/commit/961a966c7f5429a1a6d57da4d09dadc35c68bd4b))
+* **deps:** update rabbitmq:4-management docker digest to a5409e7 ([#103](https://github.com/position-pal/notification-service/issues/103)) ([bc12699](https://github.com/position-pal/notification-service/commit/bc126999a924c448ea18373e329c32e84f1e9680))
+* **deps:** update rabbitmq:4-management docker digest to f8e04e1 ([#104](https://github.com/position-pal/notification-service/issues/104)) ([48a7ec8](https://github.com/position-pal/notification-service/commit/48a7ec8343f2b2493aecd604d0b5aa7a0dfdf1c1))
+
+### Bug Fixes
+
+* **rabbitmq:** use header exchange in place of direct one ([9af9e18](https://github.com/position-pal/notification-service/commit/9af9e18950078ef85f7da09df5644dadba72958e))
+
+### Build and continuous integration
+
+* **deps:** update docker/setup-buildx-action digest to f7ce87c ([#108](https://github.com/position-pal/notification-service/issues/108)) ([be763d4](https://github.com/position-pal/notification-service/commit/be763d48f0747a0ec3163f976973c2e132a56089))
+* **deps:** update docker/setup-qemu-action digest to 4574d27 ([#109](https://github.com/position-pal/notification-service/issues/109)) ([3470dd7](https://github.com/position-pal/notification-service/commit/3470dd7b19516d15f0b70499ce4a8d10d22063c0))
+
 ## [2.3.0](https://github.com/position-pal/notification-service/compare/2.2.0...2.3.0) (2025-02-04)
 
 ### Dependency updates
