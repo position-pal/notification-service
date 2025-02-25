@@ -36,7 +36,7 @@ postgresql = "org.postgresql:postgresql:42.7.5"
 protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "proto" }
 protobuf-protoc = { module = "com.google.protobuf:protoc", version.ref = "proto" }
 rabbitmq-amqp-client = "com.rabbitmq:amqp-client:5.25.0"
-slf4j-api = "org.slf4j:slf4j-api:2.0.16"
+slf4j-api = "org.slf4j:slf4j-api:2.0.17"
 
 [bundles]
 kotlin-testing = [ "kotest-junit5-jvm", "kotest-assertions-core-jvm", "mockito-core", "mockk" ]
