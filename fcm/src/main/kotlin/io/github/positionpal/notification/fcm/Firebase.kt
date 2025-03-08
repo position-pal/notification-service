@@ -7,6 +7,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.Message
 import com.google.firebase.messaging.Notification
 import io.github.positionpal.entities.NotificationMessage
+import io.github.positionpal.notification.domain.Token
 import java.io.File
 import java.io.FileInputStream
 
@@ -24,7 +25,7 @@ class Firebase private constructor(private val app: FirebaseMessaging) {
     )
 
     /** Sends the given [notificationMessage] using the specified [token]. */
-    fun sendMessage(token: String, notificationMessage: NotificationMessage) = runCatching {
+    fun sendMessage(token: Token, notificationMessage: NotificationMessage) = runCatching {
         val notification = Notification.builder()
             .setTitle(notificationMessage.title())
             .build()
