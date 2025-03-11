@@ -7,12 +7,10 @@ services:
       RABBITMQ_DEFAULT_PASS: admin
     ports:
       - "5672:5672"   # the port RabbitMQ will listen on
-      - "15672:15672"  # the port the dashboard web service will be available from
+      - "15672:15672" # the port the dashboard web service will be available from
 
   postgres-db:
-    build:
-      context: .
-      dockerfile: Dockerfile-db
+    image: postgres:17.4@sha256:81f32a88ec561664634637dd446487efd5f9d90996304b96210078e90e5c8b21
     container_name: postgres-db
     ports:
       - "5432:5432"
@@ -25,3 +23,5 @@ services:
       timeout: 5s
       retries: 5
       start_period: 5s
+    volumes:
+      - ./storage/src/main/resources/ddl-scripts/create-tables.sql:/docker-entrypoint-initdb.d/create-tables.sql
