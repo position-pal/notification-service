@@ -1,3 +1,17 @@
+## [2.4.0](https://github.com/position-pal/notification-service/compare/2.3.2...2.4.0) (2025-03-11)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.1 ([#156](https://github.com/position-pal/notification-service/issues/156)) ([40fcd98](https://github.com/position-pal/notification-service/commit/40fcd98874c4bd9a6cb591e809d9e605ea9d92ce))
+
+### Tests
+
+* use single docker compose with a custom docker image for storage ([74a47d9](https://github.com/position-pal/notification-service/commit/74a47d90e7f654ecdad2262f4e49892f976027f5))
+
+### General maintenance
+
+* **readme:** specify for test puposes no need for envs ([1d9d55a](https://github.com/position-pal/notification-service/commit/1d9d55a4705234a3ce6a106c250946c62c8f7d32))
+
 ## [2.3.2](https://github.com/position-pal/notification-service/compare/2.3.1...2.3.2) (2025-03-11)
 
 ### Dependency updates
