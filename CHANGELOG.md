@@ -1,3 +1,18 @@
+## [2.5.0](https://github.com/position-pal/notification-service/compare/2.4.0...2.5.0) (2025-03-17)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.2 ([#158](https://github.com/position-pal/notification-service/issues/158)) ([4bc21e6](https://github.com/position-pal/notification-service/commit/4bc21e6262331a9657cb846206891362ead32885))
+* **deps:** update dependency org.mockito:mockito-core to v5.16.1 ([#161](https://github.com/position-pal/notification-service/issues/161)) ([dcb2a46](https://github.com/position-pal/notification-service/commit/dcb2a4616b66c297c478f4a27d3ae17411d50715))
+* **deps:** update eclipse-temurin:21 docker digest to 6634936 ([#157](https://github.com/position-pal/notification-service/issues/157)) ([e090711](https://github.com/position-pal/notification-service/commit/e090711183210942baa02d420b62fce7ac046004))
+* **deps:** update protobuf monorepo to v4.30.1 ([#159](https://github.com/position-pal/notification-service/issues/159)) ([1398b7d](https://github.com/position-pal/notification-service/commit/1398b7dde5275913dc6f5e1292d91be2cd5db4eb))
+
+### Build and continuous integration
+
+* **deps:** update actions/setup-node action to v4.3.0 ([#162](https://github.com/position-pal/notification-service/issues/162)) ([14f0cd2](https://github.com/position-pal/notification-service/commit/14f0cd23eb7a8e5b6cfcc1c1762c03e30358c892))
+* **deps:** update docker/login-action digest to 74a5d14 ([#160](https://github.com/position-pal/notification-service/issues/160)) ([7a83fb9](https://github.com/position-pal/notification-service/commit/7a83fb93322d1e99b7c980107a93583c56b52854))
+* download artifacts with actions/download-artifact and do not run release on forks ([#163](https://github.com/position-pal/notification-service/issues/163)) ([066b7df](https://github.com/position-pal/notification-service/commit/066b7df70ec6396eb6c3a35662db3a11b632a041))
+
 ## [2.4.0](https://github.com/position-pal/notification-service/compare/2.3.2...2.4.0) (2025-03-11)
 
 ### Dependency updates
