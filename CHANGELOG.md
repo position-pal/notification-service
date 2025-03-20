@@ -1,3 +1,22 @@
+## [2.6.0](https://github.com/position-pal/notification-service/compare/2.5.0...2.6.0) (2025-03-20)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.3 ([#174](https://github.com/position-pal/notification-service/issues/174)) ([e007952](https://github.com/position-pal/notification-service/commit/e00795256ebe9e8d62c78375804cb186e2b5788a))
+* **deps:** update dependency ch.qos.logback:logback-classic to v1.5.18 ([#168](https://github.com/position-pal/notification-service/issues/168)) ([cb5605c](https://github.com/position-pal/notification-service/commit/cb5605cb35374832cc632c09a911821294b9dc64))
+* **deps:** update postgres:17.4 docker digest to 58bb121 ([#165](https://github.com/position-pal/notification-service/issues/165)) ([b701296](https://github.com/position-pal/notification-service/commit/b701296ef9d21742be1a58d547d9e659a8df830b))
+* **deps:** update postgres:17.4 docker digest to 7f29c02 ([#169](https://github.com/position-pal/notification-service/issues/169)) ([51af7b5](https://github.com/position-pal/notification-service/commit/51af7b56785189a34e49b5d483ab8681db8a8abb))
+* **deps:** update postgres:17.4 docker digest to aa75690 ([#166](https://github.com/position-pal/notification-service/issues/166)) ([4f3f0b8](https://github.com/position-pal/notification-service/commit/4f3f0b84ea1837965beb16895717dc1a17162df3))
+* **deps:** update postgres:17.4 docker digest to c522082 ([#167](https://github.com/position-pal/notification-service/issues/167)) ([9baf7b0](https://github.com/position-pal/notification-service/commit/9baf7b0279095a794f0502b725a41f3cf4adbaa8))
+
+### Build and continuous integration
+
+* **deps:** pin actions/download-artifact action to cc20338 ([#164](https://github.com/position-pal/notification-service/issues/164)) ([038adf9](https://github.com/position-pal/notification-service/commit/038adf9866e2256cf43a9a8653862aa90fdc7eda))
+* **deps:** update actions/download-artifact digest to 95815c3 ([#172](https://github.com/position-pal/notification-service/issues/172)) ([51c02b1](https://github.com/position-pal/notification-service/commit/51c02b1999914d80dab3308ee7ef8f368bef05e9))
+* **deps:** update actions/download-artifact digest to b14cf4c ([#170](https://github.com/position-pal/notification-service/issues/170)) ([1ce06b8](https://github.com/position-pal/notification-service/commit/1ce06b891a0fb5dc75938e8ef02db3c45c251538))
+* **deps:** update actions/download-artifact digest to cc20338 ([#171](https://github.com/position-pal/notification-service/issues/171)) ([59504ac](https://github.com/position-pal/notification-service/commit/59504acf5f660f254ae19af46e37c0c90a7a4fd1))
+* **deps:** update actions/upload-artifact action to v4.6.2 ([#173](https://github.com/position-pal/notification-service/issues/173)) ([f78f110](https://github.com/position-pal/notification-service/commit/f78f110f2fa250ba7c85473ad9f2f60729207913))
+
 ## [2.5.0](https://github.com/position-pal/notification-service/compare/2.4.0...2.5.0) (2025-03-17)
 
 ### Dependency updates
