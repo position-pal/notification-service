@@ -1,3 +1,11 @@
+## [2.6.1](https://github.com/position-pal/notification-service/compare/2.6.0...2.6.1) (2025-03-23)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlin.jvm to v2.1.20 ([#175](https://github.com/position-pal/notification-service/issues/175)) ([2164b1d](https://github.com/position-pal/notification-service/commit/2164b1df0df31b6c0725e034cd0ac5ebdc89560e))
+* **core-deps:** update kotlin monorepo to v2.1.20 ([#176](https://github.com/position-pal/notification-service/issues/176)) ([fb75f15](https://github.com/position-pal/notification-service/commit/fb75f15e65b310e615ff86b7fefcf1ac4380a7ae))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.22 ([#177](https://github.com/position-pal/notification-service/issues/177)) ([daedc80](https://github.com/position-pal/notification-service/commit/daedc809f1a1a97bcecd49f1faf49c64f6a5333e))
+
 ## [2.6.0](https://github.com/position-pal/notification-service/compare/2.5.0...2.6.0) (2025-03-20)
 
 ### Dependency updates
