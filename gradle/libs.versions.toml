@@ -7,7 +7,7 @@ kotlin = "2.1.20"
 kotest = "5.9.1"
 mockito = "5.16.1"
 proto = "4.30.2"
-protobuf = "0.9.4"
+protobuf = "0.9.5"
 
 [libraries]
 archunit = "com.tngtech.archunit:archunit:1.4.0"
