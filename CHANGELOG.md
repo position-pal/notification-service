@@ -1,3 +1,20 @@
+## [2.6.2](https://github.com/position-pal/notification-service/compare/2.6.1...2.6.2) (2025-04-08)
+
+### Dependency updates
+
+* **core-deps:** update dependency org.jetbrains.kotlinx:kotlinx-coroutines-core to v1.10.2 ([#189](https://github.com/position-pal/notification-service/issues/189)) ([7f94327](https://github.com/position-pal/notification-service/commit/7f94327557c5dfd6017871624ca8b1df472f640d))
+* **deps:** update dependency com.google.protobuf to v0.9.5 ([#181](https://github.com/position-pal/notification-service/issues/181)) ([7796595](https://github.com/position-pal/notification-service/commit/779659557cd538a93e6c3f0d96639f78f5723ea3))
+* **deps:** update dependency com.zaxxer:hikaricp to v6.3.0 ([#178](https://github.com/position-pal/notification-service/issues/178)) ([e091d02](https://github.com/position-pal/notification-service/commit/e091d02f60cfb95c2a3c0f13eb4995057348e677))
+* **deps:** update dependency org.mockito:mockito-core to v5.17.0 ([#185](https://github.com/position-pal/notification-service/issues/185)) ([1e53981](https://github.com/position-pal/notification-service/commit/1e53981ef08761f7b506c5fa044cb0328f4c275f))
+* **deps:** update postgres:17.4 docker digest to 45f3f75 ([#187](https://github.com/position-pal/notification-service/issues/187)) ([cd0a0dc](https://github.com/position-pal/notification-service/commit/cd0a0dc02b953f4b015e9c23e28a5d503735f3ad))
+* **deps:** update postgres:17.4 docker digest to 6e57135 ([#188](https://github.com/position-pal/notification-service/issues/188)) ([be44004](https://github.com/position-pal/notification-service/commit/be44004ed073cc33096d5781387d8cb5459d87b1))
+* **deps:** update protobuf monorepo to v4.30.2 ([#179](https://github.com/position-pal/notification-service/issues/179)) ([9772f41](https://github.com/position-pal/notification-service/commit/9772f41c5fb83ccbb610b43cc15ad510c2529b8e))
+* **deps:** update rabbitmq:4-management docker digest to 12064be ([#184](https://github.com/position-pal/notification-service/issues/184)) ([2c1766f](https://github.com/position-pal/notification-service/commit/2c1766f9192411f65c8f49ad25e31f71cb91802f))
+* **deps:** update rabbitmq:4-management docker digest to 2a2f656 ([#180](https://github.com/position-pal/notification-service/issues/180)) ([15a369f](https://github.com/position-pal/notification-service/commit/15a369fecb2c0b462ac6c24e39e225c0e1cbf924))
+* **deps:** update rabbitmq:4-management docker digest to 4f907f0 ([#183](https://github.com/position-pal/notification-service/issues/183)) ([6360d3a](https://github.com/position-pal/notification-service/commit/6360d3abedf3146ae90d4033ee04bc4287e14ca2))
+* **deps:** update rabbitmq:4-management docker digest to a0f4e8e ([#186](https://github.com/position-pal/notification-service/issues/186)) ([a71de08](https://github.com/position-pal/notification-service/commit/a71de081e4cec2b71649a54d9d538a828541fd2d))
+* **deps:** update rabbitmq:4-management docker digest to d888247 ([#182](https://github.com/position-pal/notification-service/issues/182)) ([240f007](https://github.com/position-pal/notification-service/commit/240f007095bbb1afd01f16b9c6cb2e5a7e183abb))
+
 ## [2.6.1](https://github.com/position-pal/notification-service/compare/2.6.0...2.6.1) (2025-03-23)
 
 ### Dependency updates
