@@ -28,7 +28,7 @@ kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", versi
 kotest-junit5-jvm = { module = "io.kotest:kotest-runner-junit5-jvm", version.ref = "kotest" }
 kotest-assertions-core-jvm = { module = "io.kotest:kotest-assertions-core-jvm", version.ref = "kotest" }
 logback-classic = "ch.qos.logback:logback-classic:1.5.18"
-mockk = "io.mockk:mockk:1.13.17"
+mockk = "io.mockk:mockk:1.14.0"
 positionpal-kernel-domain = { module = "io.github.positionpal:kernel-domain", version.ref = "kernel" }
 positionpal-kernel-presentation = { module = "io.github.positionpal:kernel-presentation", version.ref = "kernel" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
