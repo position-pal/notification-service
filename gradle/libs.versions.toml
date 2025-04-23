@@ -1,7 +1,7 @@
 [versions]
 exposed = "0.61.0"
 grpc = "1.72.0"
-grpc-kotlin = "1.4.1"
+grpc-kotlin = "1.4.3"
 kernel = "1.0.3"
 kotlin = "2.1.20"
 kotest = "5.9.1"
