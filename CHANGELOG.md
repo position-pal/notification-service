@@ -1,3 +1,10 @@
+## [2.7.0](https://github.com/position-pal/notification-service/compare/2.6.3...2.7.0) (2025-05-13)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.4 ([#236](https://github.com/position-pal/notification-service/issues/236)) ([dfa9a02](https://github.com/position-pal/notification-service/commit/dfa9a02f5632f5d582063161b4ec26b4d871f8b7))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.24 ([#235](https://github.com/position-pal/notification-service/issues/235)) ([3858b6d](https://github.com/position-pal/notification-service/commit/3858b6d8614fc926edee4cc0b91291ed61991ec5))
+
 ## [2.6.3](https://github.com/position-pal/notification-service/compare/2.6.2...2.6.3) (2025-05-13)
 
 ### Dependency updates
