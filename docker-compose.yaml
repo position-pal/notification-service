@@ -10,7 +10,7 @@ services:
       - "15672:15672" # the port the dashboard web service will be available from
 
   postgres-db:
-    image: postgres:17.5@sha256:cb51e9f73d5b6fd77340999cc0fdfcf56a1d580daa6f4c2f6c72264993e6de34
+    image: postgres:17.5@sha256:6cf6142afacfa89fb28b894d6391c7dcbf6523c33178bdc33e782b3b533a9342
     container_name: postgres-db
     ports:
       - "5432:5432"
