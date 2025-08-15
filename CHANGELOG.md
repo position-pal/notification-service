@@ -1,3 +1,13 @@
+## [2.9.0](https://github.com/position-pal/notification-service/compare/2.8.2...2.9.0) (2025-08-15)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.6 ([#349](https://github.com/position-pal/notification-service/issues/349)) ([df642bf](https://github.com/position-pal/notification-service/commit/df642bfa80b95bfc0712fe209c7dd2b41393ac06))
+* **deps:** update plugin git-sensitive-semantic-versioning to v6.0.1 ([#348](https://github.com/position-pal/notification-service/issues/348)) ([c28fa90](https://github.com/position-pal/notification-service/commit/c28fa9025d1ef5a03e181a2b6cd52236929cc073))
+* **deps:** update plugin org.danilopianini.gradle-pre-commit-git-hooks to v2.0.29 ([#347](https://github.com/position-pal/notification-service/issues/347)) ([1e58c24](https://github.com/position-pal/notification-service/commit/1e58c24470d41d35f54daf886c355ed355ac9d68))
+* **deps:** update postgres docker tag to v17.6 ([#350](https://github.com/position-pal/notification-service/issues/350)) ([94a0115](https://github.com/position-pal/notification-service/commit/94a011561c27c5f16747c44a8548f8d7f199d429))
+* **deps:** update postgres:17.5 docker digest to aadf2c0 ([#346](https://github.com/position-pal/notification-service/issues/346)) ([1c57e15](https://github.com/position-pal/notification-service/commit/1c57e158605994f4ee1ea45d2cda20ed7244dd62))
+
 ## [2.8.2](https://github.com/position-pal/notification-service/compare/2.8.1...2.8.2) (2025-08-14)
 
 ### Dependency updates
