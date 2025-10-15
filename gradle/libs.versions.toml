@@ -6,7 +6,7 @@ kernel = "1.0.7"
 kotlin = "2.2.20"
 kotest = "5.9.1"
 mockito = "5.20.0"
-proto = "4.32.1"
+proto = "4.33.0"
 protobuf = "0.9.5"
 
 [libraries]
