@@ -1,3 +1,9 @@
+## [2.11.0](https://github.com/position-pal/notification-service/compare/2.10.1...2.11.0) (2025-10-23)
+
+### Dependency updates
+
+* **api-deps:** update kernel to v1.0.8 ([#455](https://github.com/position-pal/notification-service/issues/455)) ([942fc59](https://github.com/position-pal/notification-service/commit/942fc5947f579bde4cae4be27eb4c064fc7dc0d9))
+
 ## [2.10.1](https://github.com/position-pal/notification-service/compare/2.10.0...2.10.1) (2025-10-23)
 
 ### Dependency updates
