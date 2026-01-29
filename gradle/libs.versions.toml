@@ -13,7 +13,7 @@ protobuf = "0.9.6"
 archunit = "com.tngtech.archunit:archunit:1.4.1"
 exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed"}
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
-firebase-admin = "com.google.firebase:firebase-admin:9.7.0"
+firebase-admin = "com.google.firebase:firebase-admin:9.7.1"
 grpc-inprocess = { module = "io.grpc:grpc-inprocess", version.ref = "grpc" }
 grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
 grpc-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc-kotlin" }
