@@ -35,7 +35,7 @@ mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 postgresql = "org.postgresql:postgresql:42.7.10"
 protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "proto" }
 protobuf-protoc = { module = "com.google.protobuf:protoc", version.ref = "proto" }
-rabbitmq-amqp-client = "com.rabbitmq:amqp-client:5.28.0"
+rabbitmq-amqp-client = "com.rabbitmq:amqp-client:5.29.0"
 slf4j-api = "org.slf4j:slf4j-api:2.0.17"
 
 [bundles]
