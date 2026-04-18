@@ -10,7 +10,7 @@ proto = "4.34.1"
 protobuf = "0.9.6"
 
 [libraries]
-archunit = "com.tngtech.archunit:archunit:1.4.1"
+archunit = "com.tngtech.archunit:archunit:1.4.2"
 exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed"}
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
 firebase-admin = "com.google.firebase:firebase-admin:9.8.0"
