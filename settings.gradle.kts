@@ -1,6 +1,6 @@
 plugins {
     id("org.danilopianini.gradle-pre-commit-git-hooks") version "2.1.17"
-    id("com.gradle.develocity") version "4.4.1"
+    id("com.gradle.develocity") version "4.4.2"
 }
 
 rootProject.name = "notification-service"
